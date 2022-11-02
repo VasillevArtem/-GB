@@ -66,4 +66,3 @@ static void IsTheEvenNumberTo(int num)
         }       
     }    
 }
-CompareThreeValues(1,2,2);
