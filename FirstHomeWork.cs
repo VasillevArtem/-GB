@@ -21,22 +21,21 @@ static void CompareTwoValues(int inputValueA, int inputValueB)
 
 static void CompareThreeValues(int inputValueA, int inputValueB, int inputValueC)
 {   
-    if(inputValueA == inputValueB && inputValueB == inputValueC)
+    int maxValue = inputValueA;
+
+    if(inputValueA == inputValueB && inputValueB == inputValueC) 
     {
         System.Console.WriteLine($"Числа равны | {inputValueA} = {inputValueB} = {inputValueC}");
-    }
-    else if(inputValueA > inputValueB && inputValueA > inputValueC)
+    }else if(inputValueB > maxValue)
     {
-        System.Console.WriteLine($"Наибольшее число {inputValueA}");
+        maxValue = inputValueB;
     }
-    else if(inputValueB > inputValueA && inputValueB > inputValueC)
+    else if(inputValueC > maxValue)
     {
-        System.Console.WriteLine($"Наибольшее число {inputValueB}");
+        maxValue = inputValueC;
     }
-    else if(inputValueC > inputValueA && inputValueC > inputValueB)
-    {
-        System.Console.WriteLine($"Наибольшее число {inputValueC}");
-    }
+    System.Console.WriteLine($"Наибольшее число {maxValue}");
+   
 }
 
 
@@ -67,3 +66,4 @@ static void IsTheEvenNumberTo(int num)
         }       
     }    
 }
+CompareThreeValues(1,2,2);
