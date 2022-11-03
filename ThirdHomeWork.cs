@@ -1,6 +1,5 @@
 //Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом. r=r*10+n%10;
 //n=n/10;
-
 static void IsPalindrom(int number)
 {
     int tempS = 0;
@@ -53,7 +52,6 @@ struct Point
 
 
 //Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
-
 static void CubeNumber(int number)
 {
     for (int i = 0; i < number; i++)
@@ -65,7 +63,6 @@ static void CubeNumber(int number)
 
 
 //Метод для подсчета количества цифр в числе.
-
 static int DigitsInTheNumber(int number)
 {
     int count = 0;
@@ -79,7 +76,6 @@ static int DigitsInTheNumber(int number)
 
 
 //Метод для вывода в консоль.
-
 static void PrintInConsole<T>(T value)
 {
     System.Console.WriteLine(value);

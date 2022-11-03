@@ -37,7 +37,7 @@ static void ThirdDigit(int number)
     {
         PrintInConsole("The third digit is missing");
     }
-    
+
 }
 
 
@@ -45,10 +45,10 @@ static void ThirdDigit(int number)
 //Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
 
 static void DayOfWeek(int numberDayOfWeek)
-{    
-    if(numberDayOfWeek > 0 && numberDayOfWeek <= 7)
+{
+    if (numberDayOfWeek > 0 && numberDayOfWeek <= 7)
     {
-        if(numberDayOfWeek == 6 || numberDayOfWeek == 7)
+        if (numberDayOfWeek == 6 || numberDayOfWeek == 7)
         {
             PrintInConsole("This day is a weekend");
         }
@@ -56,7 +56,7 @@ static void DayOfWeek(int numberDayOfWeek)
         {
             PrintInConsole("This day is not a weekend");
         }
-        
+
     }
     else
     {
