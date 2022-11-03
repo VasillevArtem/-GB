@@ -29,7 +29,6 @@ static void IsPalindrom(int number)
 
 
 //Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
-
 static void Distance(Point pointA, Point pointB) => PrintInConsole(Math.Sqrt(Math.Pow(pointB.X - pointA.X, 2) +
                                                                              Math.Pow((pointB.Y - pointA.Y), 2) +
                                                                              Math.Pow((pointB.Z - pointA.Z), 2)));

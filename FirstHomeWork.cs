@@ -1,5 +1,4 @@
-﻿//Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
-
+//Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
 static void CompareTwoValues(int inputValueA, int inputValueB)
 {   
     if(inputValueA == inputValueB)
@@ -18,7 +17,6 @@ static void CompareTwoValues(int inputValueA, int inputValueB)
 
 
 //Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
-
 static void CompareThreeValues(int inputValueA, int inputValueB, int inputValueC)
 {   
     int maxValue = inputValueA;
@@ -40,7 +38,6 @@ static void CompareThreeValues(int inputValueA, int inputValueB, int inputValueC
 
 
 //Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
-
 static void IsTheEvenNumber(int num)
 {
     if(num % 2 == 0)
@@ -55,7 +52,6 @@ static void IsTheEvenNumber(int num)
 
 
 //Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
-
 static void IsTheEvenNumberTo(int num)
 {
     for (int i = 0; i <= num; i++)
