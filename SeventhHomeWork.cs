@@ -15,16 +15,15 @@ static double[,] RandomValueArr(int row, int column, Random rand)
 
 
 //Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
-static double ValueOfArray(double[,] arr, int row, int colomn)
+static double ValueOfArray(double[,] arr, int row, int column)
 {
-    try
+    if (row < 0 || row >= arr.GetLength(0) || column < 0 || column >= arr.GetLength(1))
     {
-        return arr[row, colomn];
+        throw new ArgumentException("Выход за пределы массива.");
     }
-    catch (Exception e)
+    else
     {
-        System.Console.WriteLine(e.Message);
-        throw new ArgumentOutOfRangeException("Индекс оказался вне диапазона - такого элемента нет в массиве.", e);
+        return arr[row, column];
     }
 
 }
