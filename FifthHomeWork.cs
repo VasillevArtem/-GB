@@ -27,7 +27,7 @@ static void SumBetweenMaxAndMin()
 
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = NextDouble(random);
+        array[i] = RandomDouble(random);
     }
     sumOdd = array.Max() - array.Min();
     PrintInConsole(sumOdd);
@@ -35,7 +35,7 @@ static void SumBetweenMaxAndMin()
 }
 
 
-static double NextDouble(Random random)
+static double RandomDouble(Random random)
 {
     double mantissa = (random.NextDouble() * 2.0) - 1.0;    
     double exponent = Math.Pow(2.0, random.Next(-126, 128));
