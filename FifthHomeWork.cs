@@ -34,7 +34,7 @@ static void SumBetweenMaxAndMin()
 
 }
 
-
+//Метод для генерации случайных вещественных чисел.
 static double RandomDouble(Random random)
 {
     double mantissa = (random.NextDouble() * 2.0) - 1.0;    
