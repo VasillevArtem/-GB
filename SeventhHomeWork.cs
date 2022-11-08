@@ -69,6 +69,7 @@ static double[] ArithmeticMean(int[,] arr)
     return resultArr;
 }
 
+//Метод для генерации случайных вещественных чисел.
 static double RandomDouble(Random random)
 {
     double mantissa = (random.NextDouble() * 2.0) - 1.0; 
