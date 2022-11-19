@@ -1,0 +1,205 @@
+// Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
+static void SortInDescending(int[,] arr)
+{
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        DescBubbleSort(arr, i);
+    }
+}
+//Метод сортировки строки в двумерном массиве в обратном порядке.
+static void DescBubbleSort(int[,] arr, int rowIndex)
+{
+    for (int i = 0; i < arr.GetLength(1); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1) - 1 - i; j++)
+        {
+            if (arr[rowIndex, j] < arr[rowIndex, j + 1])
+            {
+                int temp = arr[rowIndex, j + 1];
+                arr[rowIndex, j + 1] = arr[rowIndex, j];
+                arr[rowIndex, j] = temp;
+            }
+        }
+    }
+}
+
+
+//Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
+static void SumInRow(int[,] arr)
+{
+    int indexMinSumLine = 0;
+    int sumLine = SumLineElements(arr, 0);
+
+    for (int i = 1; i < arr.GetLength(0); i++)
+    {
+        int currentSumLine = SumLineElements(arr, i);
+        if (sumLine > currentSumLine)
+        {
+            sumLine = currentSumLine;
+            indexMinSumLine = i;
+        }
+    }
+    Console.WriteLine($"\n{indexMinSumLine + 1} - строкa с наименьшей суммой всех элементов (sum = {sumLine})");
+}
+//Метод для подсчета суммы в строке двумерного массива.
+static int SumLineElements(int[,] arr, int index)
+{
+    int sumLine = arr[index, 0];
+    for (int j = 1; j < arr.GetLength(1); j++)
+    {
+        sumLine += arr[index, j];
+    }
+    return sumLine;
+}
+
+
+//Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+static int[,] MultiplyMatrix(int[,] firstMartrix, int[,] secondMartrix)
+{
+    int[,] resultMatrix = new int[firstMartrix.GetLength(0),secondMartrix.GetLength(1)];
+
+    for (int i = 0; i < resultMatrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < resultMatrix.GetLength(1); j++)
+        {
+            int sum = 0;
+            for (int k = 0; k < firstMartrix.GetLength(1); k++)
+            {
+                sum += firstMartrix[i, k] * secondMartrix[k, j];
+            }
+            resultMatrix[i, j] = sum;
+        }
+    }
+    return resultMatrix;
+}
+
+
+//Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+static void WriteArray(int[,,] arr3D)
+{
+    for (int i = 0; i < arr3D.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr3D.GetLength(1); j++)
+        {
+            Console.Write($"X({i}) Y({j}) ");
+            for (int k = 0; k < arr3D.GetLength(2); k++)
+            {
+                Console.Write($"Z({k})={arr3D[i, j, k]}; ");
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine();
+    }
+}
+
+//Метод для создания трехмерного массива
+static void Create3DArray(int[,,] arr3D)
+{  
+    Random rand= new Random();
+
+    int[] temp = new int[arr3D.GetLength(0) * arr3D.GetLength(1) * arr3D.GetLength(2)];
+    int number;
+
+    for (int i = 0; i < temp.GetLength(0); i++)
+    {
+        temp[i] = new Random().Next(10, 100);
+        number = temp[i];
+
+        if (i >= 1)
+        {
+            for (int j = 0; j < i; j++)
+            {
+                while (temp[i] == temp[j])
+                {
+                    temp[i] = rand.Next(10, 100);
+                    j = 0;
+                    number = temp[i];
+                }
+                number = temp[i];
+            }
+        }
+    }
+    int count = 0;
+
+    for (int x = 0; x < arr3D.GetLength(0); x++)
+    {
+        for (int y = 0; y < arr3D.GetLength(1); y++)
+        {
+            for (int z = 0; z < arr3D.GetLength(2); z++)
+            {
+                arr3D[x, y, z] = temp[count];
+                count++;
+            }
+        }
+    }
+}
+
+
+//Напишите программу, которая заполнит спирально массив 4 на 4.
+static void SqareMatrix()
+{
+    int n = 4;
+    int[,] sqareMatrix = new int[n, n];
+
+    int temp = 1;
+    int i = 0;
+    int j = 0;
+
+    while (temp <= sqareMatrix.GetLength(0) * sqareMatrix.GetLength(1))
+    {
+        sqareMatrix[i, j] = temp;
+        temp++;
+        if (i <= j + 1 && i + j < sqareMatrix.GetLength(1) - 1)
+            j++;
+        else if (i < j && i + j >= sqareMatrix.GetLength(0) - 1)
+            i++;
+        else if (i >= j && i + j > sqareMatrix.GetLength(1) - 1)
+            j--;
+        else
+            i--;
+    }
+
+}
+//Метод для отображения матрицы спиралью.
+static void WriteSpiralArr(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            if (array[i, j] / 10 <= 0)
+                Console.Write($" {array[i, j]} ");
+
+            else Console.Write($"{array[i, j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+//Метод для вывода двумерного массива в консоль
+static void PrintArray(int[,] arr)
+{
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            Console.Write(arr[i, j] + " ");
+        }
+        Console.WriteLine();
+    }
+}
+
+
+//Метод для создания и заполнения двумерного массива случайными числами в диапазоне от 0 до range".
+void CreateArray(int[,] arr, int range)
+{
+    Random random= new Random();
+
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            arr[i, j] = random.Next(range);
+        }
+    }
+}
