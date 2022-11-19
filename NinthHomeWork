@@ -18,11 +18,11 @@ static int SumNumbers(int mValue, int nValue)
     }                                                 
     else if (mValue < nValue)
     {
-        return nValue + SumNumbers(mValue, nValue - 1);      // Если M<N
+        return nValue + SumNumbers(mValue, nValue - 1);      // Если M < N
     }        
     else
     {
-        return nValue + SumNumbers(mValue, nValue + 1);      // Если M>N
+        return nValue + SumNumbers(mValue, nValue + 1);      // Если M > N
     }
         
 }
