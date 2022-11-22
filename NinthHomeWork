@@ -6,23 +6,23 @@ static int SumNumbers(int mValue, int nValue)
 {
     if (mValue == 0)
     {
-        return (nValue * (nValue + 1)) / 2;                  // Если M равно нулю
+        return (nValue * (nValue + 1)) / 2;                  
     }
     else if (nValue == 0)
     {
-        return (mValue * (mValue + 1)) / 2;                  // Если N равно нулю
+        return (mValue * (mValue + 1)) / 2;                  
     }                                           
     else if (mValue == nValue)
     {
-        return mValue;                                       // Если M=N
+        return mValue;                                       
     }                                                 
     else if (mValue < nValue)
     {
-        return nValue + SumNumbers(mValue, nValue - 1);      // Если M < N
+        return nValue + SumNumbers(mValue, nValue - 1);     
     }        
     else
     {
-        return nValue + SumNumbers(mValue, nValue + 1);      // Если M > N
+        return nValue + SumNumbers(mValue, nValue + 1);      
     }
         
 }
